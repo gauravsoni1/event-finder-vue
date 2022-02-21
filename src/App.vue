@@ -1,26 +1,35 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <event-search-page />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import EventSearchPage from "./components/EventSearchPage.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    EventSearchPage,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
+}
+.mb-1{
+  margin-bottom: 10px;
+}
+.mb-2 {
+  margin-bottom: 20px;
+}
+.mt-2 {
+  margin-top: 20px;
+}
+.mr-2 {
+  margin-right: 20px;
+}
+.p1 {
+  padding: 10px;
 }
 </style>
