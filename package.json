@@ -5,8 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "deploy": "netlify deploy --prod --dir=dist"
+    "lint": "vue-cli-service lint",    
+    "deploy": "netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=dist"
   },
   "dependencies": {
     "@varlet/ui": "^1.26.1",
