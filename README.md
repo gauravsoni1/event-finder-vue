@@ -1,24 +1,14 @@
 # event-search
 
+### Description 
+Event search application developed using VUE framework. The application can be viewed on - https://event-search-vue.netlify.app/
 ## Project setup
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Deployment
 ```
-npm run build
+1. Merge to master for auto deployment to Netlify
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
