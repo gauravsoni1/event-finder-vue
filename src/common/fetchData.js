@@ -24,4 +24,25 @@ const getData = (query) => {
   return getDataPromise;
 };
 
-export { getData };
+const getEventDetails = (eventId) => {
+  let getDataPromise = new Promise((resolve, reject) => {
+    axios
+      .get(`https://app.ticketmaster.com/discovery/v2/events/${eventId}`, {
+        params: { apikey: "OJX32GcJR0Vu00DtMtPPnWNWMHK5VI9F" },
+      })
+      .then((res) => {
+        if (res.status === 404) {
+          reject("No data found");
+        } else {
+          resolve(res.data);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        reject("Error fetching data");
+      });
+  });
+  return getDataPromise;
+};
+
+export { getData, getEventDetails };

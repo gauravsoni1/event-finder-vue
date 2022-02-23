@@ -35,7 +35,12 @@
     <var-row>
       <var-col :span="16"> <h3>Search Result</h3> </var-col>
     </var-row>
-    <event-row v-for="event in events" :key="event.id" :event="event" />
+    <event-row
+      v-for="event in events"
+      :key="event.id"
+      :event="event"
+      @row-click="rowClicked"
+    />
   </var-space>
 </template>
 
@@ -60,10 +65,9 @@ export default {
   props: ["events"],
   emits: ["filter-updated"],
   methods: {
-    filterData() {
-      // getData({ includeTBD: "no", includeTBA: "no" });
-      // console.log(this.sortAndFilter);
-      // console.log(this.events);
+    rowClicked(eventSelected) {
+      console.log(eventSelected);
+      this.$router.push(`/event-details/${eventSelected.id}`);
     },
   },
   components: {

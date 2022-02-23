@@ -2,8 +2,7 @@
   <var-space direction="column" size="large">
     <var-form ref="form" :disabled="disabled" :readonly="readonly">
       <var-row>
-        <var-col :span="16"> <h3>Search Event</h3> </var-col>
-        <var-col :span="8">
+        <var-col :span="24">
           <var-select placeholder="Select Country" v-model="selectedCountry">
             <var-option
               :key="key"
@@ -26,7 +25,9 @@
         <label class="mr-2">End Date</label>
         <input type="date" v-model="endDate" />
       </div>
+      <var-loading class="mt-2" color="#3a7afe" type="wave" v-if="isLoading" />
       <var-button
+        v-else
         class="mt-2"
         block
         type="primary"
@@ -34,8 +35,8 @@
           $emit('form-submit', {
             selectedCountry: this.selectedCountry,
             eventName: this.eventName,
-            startDate: this.startDate,
-            endDate: this.endDate,
+            startDate: formatDate(this.startDate),
+            endDate: formatDate(this.endDate),
           })
         "
       >
@@ -50,6 +51,7 @@ import countryCodes from "../assets/countryCodes.json";
 import moment from "moment";
 
 export default {
+  props: ['isLoading'],
   emits: ["search-event"],
   data() {
     return {
@@ -63,6 +65,9 @@ export default {
   methods: {
     onSelected() {
       console.log(this.selectedCountry);
+    },
+    formatDate(date) {
+      return moment(date).format("YYYY-MM-DDTHH:mm:ss") + "Z";
     },
   },
 };

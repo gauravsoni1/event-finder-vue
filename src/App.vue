@@ -1,14 +1,20 @@
 <template>
-  <event-search-page />
+  <header-bar @click="headerClicked" title="My Event Finder App"></header-bar>
+  <router-view> </router-view>
 </template>
 
 <script>
-import EventSearchPage from "./components/EventSearchPage.vue";
+import HeaderBar from "./components/HeaderBar.vue";
 
 export default {
   name: "App",
   components: {
-    EventSearchPage,
+    HeaderBar,
+  },
+  methods: {
+    headerClicked() {
+      this.$router.push("/event-search");
+    },
   },
 };
 </script>
@@ -17,7 +23,10 @@ export default {
 body {
   margin: 0;
 }
-.mb-1{
+.m1 {
+  margin: 10px;
+}
+.mb-1 {
   margin-bottom: 10px;
 }
 .mb-2 {
@@ -31,5 +40,10 @@ body {
 }
 .p1 {
   padding: 10px;
+}
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 </style>

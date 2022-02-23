@@ -1,5 +1,5 @@
 <template>
-  <var-app-bar title="title" />
+  <var-app-bar title="title" hidden="false" class="headerBar" />
 </template>
 
 <script>
@@ -11,3 +11,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.headerBar :hover {
+  cursor: pointer;
+}
+</style>
