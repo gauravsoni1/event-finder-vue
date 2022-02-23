@@ -1,5 +1,5 @@
 <template>
-  <header-bar @click="headerClicked" title="My Event Finder App"></header-bar>
+  <header-bar @click="headerClicked" title="My Awesome app !!"></header-bar>
   <router-view> </router-view>
 </template>
 
